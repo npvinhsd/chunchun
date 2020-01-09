@@ -1,0 +1,14 @@
+{
+  "name": "chunchun",
+  "version": "1.0.0",
+  "description": "Helper class of mine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Helper"
+  ],
+  "author": "npvinh",
+  "license": "ISC"
+}
