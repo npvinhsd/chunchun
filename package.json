@@ -1,6 +1,6 @@
 {
   "name": "chunchun",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Helper class of mine",
   "main": "index.ts",
   "scripts": {
