@@ -2,13 +2,24 @@
   "name": "chunchun",
   "version": "1.0.2",
   "description": "Helper class of mine",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "mocha -r ts-node/register tests/**/*.ts"
   },
   "keywords": [
     "Helper"
   ],
   "author": "npvinh",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/mocha": "^5.2.7",
+    "@types/sinon": "^7.5.1",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0",
+    "sinon": "^8.0.4",
+    "ts-node": "^8.6.1",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {}
 }
