@@ -9,6 +9,8 @@ describe('Test Measure Time', () => {
     });
 
     it('Should call console.log once time', async () => {
+        process.env.LOG_LEVEL = 'dev';
+
         class TestClass {
             @measureExecTime()
             async testTime() {
