@@ -1,6 +1,5 @@
-import {InjectableService} from "@app/ioc/decorators/InjectableService";
-import {Inject} from "@app/ioc/decorators/Inject";
 import {expect} from 'chai';
+import {Inject, InjectableService} from "../../src/ioc/decorators";
 
 describe('Test Inject Service', () => {
     it('Should have Service A in class B', () => {

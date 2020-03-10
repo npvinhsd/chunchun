@@ -1,4 +1,4 @@
-import {Container} from "@app/ioc/containers/Container";
+import {Container} from "..";
 
 export function InjectableService(name: string) {
     return function (constructor: any) {

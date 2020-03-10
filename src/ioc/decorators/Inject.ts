@@ -1,4 +1,4 @@
-import {Container} from "@app/ioc/containers/Container";
+import {Container} from "..";
 
 export function Inject(name: string) {
     return function (target: any, propertyKey: string) {

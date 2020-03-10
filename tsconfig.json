@@ -7,22 +7,12 @@
     "emitDecoratorMetadata": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
-    "outDir": "dist",
-    "paths": {
-      "*": [
-        "node_modules/*"
-      ],
-      "@app/*": [
-        "src/*"
-      ]
-    }
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules"
   ],
   "include": [
-    "src/**/*",
-    "tests/**/*"
+    "src/**/*"
   ]
 }

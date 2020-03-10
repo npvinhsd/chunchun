@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import * as sinon from 'sinon';
 import {SinonStub} from 'sinon';
-import {measureExecTime} from "@app/utils/decorators";
+import {measureExecTime} from "../../src/utils/decorators";
 
 describe('Test Measure Time', () => {
     beforeEach(() => {
