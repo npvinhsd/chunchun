@@ -2,9 +2,9 @@
   "name": "chunchun",
   "version": "1.1.1",
   "description": "Helper class of mine",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register tests/**/*.ts"
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register tests/**/*.ts"
   },
   "keywords": [
     "Helper"
@@ -20,7 +20,10 @@
     "mocha": "^7.0.0",
     "sinon": "^8.0.4",
     "ts-node": "^8.6.1",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  }
 }
