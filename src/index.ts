@@ -1,1 +1,2 @@
-export * from '@app/utils/decorators';
+export * from './utils/decorators';
+export * from './ioc';
