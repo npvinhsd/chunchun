@@ -1,8 +1,8 @@
 {
   "name": "chunchun",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Helper class of mine",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts"
   },

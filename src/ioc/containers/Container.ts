@@ -1,7 +1,13 @@
 import "reflect-metadata";
 
+interface IConstructorConfig {
+    singleton: boolean;
+    constructor: any;
+}
+
 export class Container {
-    private map: Map<string, any> = new Map<string, any>();
+    private map: Map<string, IConstructorConfig> = new Map<string, IConstructorConfig>();
+    private singletonMap: Map<string, any> = new Map<string, any>();
 
     private static _instance: Container | null;
 
@@ -19,15 +25,32 @@ export class Container {
 
 
     public resolve<T>(key: string, ...params: any[]): T {
-        let constructor = this.map.get(key);
-        if (!constructor) {
+        let config = this.map.get(key);
+        if (!config) {
             throw new Error('error');
         }
 
-        return new constructor(...params);
+        if (!config.singleton) {
+            return new config.constructor(...params);
+
+        }
+
+        let object = this.singletonMap.get(key);
+        if (object) {
+            return object;
+        }
+
+        object = new config.constructor();
+
+        this.singletonMap.set(key, object);
+
+        return object;
     }
 
-    public register<T>(key: string, type: T) {
-        this.map.set(key, type);
+    public register<T>(key: string, type: T, singleton: boolean) {
+        this.map.set(key, {
+            singleton,
+            constructor: type
+        });
     }
 }
