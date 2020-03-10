@@ -4,7 +4,8 @@
   "description": "Helper class of mine",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register tests/**/*.ts"
+    "test": "mocha -r ts-node/register tests/**/*.ts",
+    "build": "tsc --declaration"
   },
   "keywords": [
     "Helper"
