@@ -1,5 +1,6 @@
 import {expect} from 'chai';
-import {Inject, InjectableService} from "../../src/ioc/decorators";
+import {Inject, InjectableService} from '../../src/ioc/decorators';
+import {Container} from '../../src/ioc';
 
 describe('Test Inject Service', () => {
     it('Should have Service A in class B', () => {
@@ -41,5 +42,15 @@ describe('Test Inject Service', () => {
         let b = new B();
         let c = new C();
         expect(c.a.b).to.be.equal(2);
-    })
+    });
+
+    it('Register object instance successfully', () => {
+        class A {
+            public b = 1;
+        }
+
+        Container.getInstance().registerInstance<A>(A.name, new A());
+        let a = Container.getInstance().resolve<A>(A.name);
+        expect(a.b).to.be.equal(1);
+    });
 });

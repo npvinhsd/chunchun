@@ -1,6 +1,6 @@
 {
   "name": "chunchun",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Helper class of mine",
   "main": "dist/index.js",
   "scripts": {

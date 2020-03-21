@@ -1,8 +1,9 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 
 interface IConstructorConfig {
     singleton: boolean;
     constructor: any;
+    instance: any;
 }
 
 export class Container {
@@ -36,6 +37,7 @@ export class Container {
         }
 
         let object = this.singletonMap.get(key);
+
         if (object) {
             return object;
         }
@@ -50,7 +52,18 @@ export class Container {
     public register<T>(key: string, type: T, singleton: boolean) {
         this.map.set(key, {
             singleton,
-            constructor: type
+            constructor: type,
+            instance: null
         });
+    }
+
+    public registerInstance<T>(key: string, instance: T) {
+        this.map.set(key, {
+            constructor: null,
+            singleton: true,
+            instance
+        });
+
+        this.singletonMap.set(key, instance);
     }
 }
